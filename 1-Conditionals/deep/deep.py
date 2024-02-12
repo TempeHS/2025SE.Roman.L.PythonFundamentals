@@ -1,9 +1,7 @@
 ans = input("say 42 ")
-ans = int(ans)
 
-if ans == 42:
-    ("fourty two")
-    print("yes")
-
-else:
-    print("no")
+match ans:
+    case "42" | "Fourty Two" | "fourty-two":
+        print("yes")
+    case _:
+        print("no")
