@@ -7,6 +7,18 @@ x = float(x)
 z = float(z)
 
 if y == "+":
-    ans = print((x) + (z))
+    ans = (x) + (z)
 
-print(ans)
+elif y == "-":
+    ans = (x) - (z)
+
+elif y == "*":
+    ans = (x) * (z)
+
+elif y == "/":
+    ans = (x) / (z)
+
+else:
+    print("no")
+
+print(round(ans, 2))
