@@ -3,5 +3,6 @@
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "ms-python.black-formatter",
-	"editor.fontSize": 18
+	"editor.fontSize": 18,
+	"python.REPL.enableREPLSmartSend": false
 }
