@@ -1,0 +1,14 @@
+# camel case to snake case
+
+
+def convert(x):
+    return
+
+
+def main():
+    x = input("name in camel case?: ")
+    print(x)
+
+
+if __name__ == "__main__":
+    main()
