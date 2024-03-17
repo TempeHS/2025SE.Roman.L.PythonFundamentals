@@ -22,17 +22,16 @@ def main():
             print("Too many command-line arguments")
             sys.exit
 
-        else:
-            sys.exit
-
-    except IndexError:
         if ".py" not in sys.argv[1]:
             print("Not a Python file")
             sys.exit
 
         else:
-            print("Too few command-line arguments")
             sys.exit
+
+    except IndexError:
+        print("Too few command-line arguments")
+        sys.exit
 
 
 if __name__ == "__main__":
