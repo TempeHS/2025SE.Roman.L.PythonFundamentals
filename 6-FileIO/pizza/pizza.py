@@ -29,7 +29,7 @@ def main():
             sys.exit
 
     except IndexError:
-        print("Too few command arguments")
+        print("Too few command-line arguments")
         sys.exit
 
 
