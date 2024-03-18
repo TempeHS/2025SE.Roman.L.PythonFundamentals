@@ -1,21 +1,20 @@
 import sys
+import csv
+from tabulate import tabulate
 
 
 def main():
     try:
-        if sys.argv[1].endswith(".py") and len(sys.argv) == 2:
-
-            count = 0
-
+        if sys.argv[1].endswith(".csv") and len(sys.argv) == 2:
             try:
                 with open(sys.argv[1]) as file:
-                    for line in file:
-                        line = line.lstrip()
-                        if not line.startswith("#") and line.strip():
+                    reader = csv.reader(file)
+                    pizzas = []
 
-                            count += 1
+                    for row in reader:
+                        pizzas.append(row)
 
-                print(f"{count} lines of code.")
+                    print(tabulate(pizzas, tablefmt="grid"))
 
             except FileNotFoundError:
                 print("File does not exist")
@@ -26,11 +25,11 @@ def main():
             sys.exit
 
         else:
-            print("Not a Python file")
+            print("Not a CSV file")
             sys.exit
 
     except IndexError:
-        print("Too few command-line arguments")
+        print("Too few command arguments")
         sys.exit
 
 
