@@ -28,16 +28,33 @@ def add_name():
     name = input("what is your name?: ")
 
     with open("test.txt", "r") as file:
-        for line in file:
-            if name in line:
-                print("already there")
+        print("reading")
+        content = file.read()
 
-            else:
-                with open("test.txt", "a") as file:
-                    file.write(f"{name}\n")
-                    file.close()
+        if not content:
+            with open("test.txt", "w") as file:
+                file.write(f"{name}\n")
+                file.close()
 
                 print(f"{name} is imported")
+
+                main()
+
+        else:
+            print("else")
+            with open("test.txt", "r") as file:
+                for line in file:
+                    if name in line:
+                        print("already there")
+                        file.close()
+
+                    elif name not in line:
+                        with open("test.txt", "a") as file:
+                            print("writing")
+                            file.write(f"{name}\n")
+                            file.close()
+
+                            print(f"{name} is imported")
 
     main()
 
